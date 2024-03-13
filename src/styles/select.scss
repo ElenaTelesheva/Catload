@@ -1,0 +1,105 @@
+.smart-select {
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  // margin-top: 100px;
+  // padding: 32px;
+}
+
+.smart-select {
+
+  &__select-box {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__selected {
+    padding: 12px 24px;
+    cursor: pointer;
+    background-color: #2f3640;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    color: #f5f6fa;
+    position: relative;
+
+    order: 0;
+  }
+
+  &__selected::after {
+    content: "";
+    background: url("../images/arrow-down.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 10px;
+    top: 5px;
+
+    transition: all 0.4s;
+  }
+
+  &__options-container {
+    background-color: #ff655b;
+    color: white;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+    order: 1;
+  }
+  &__options-container.active {
+    max-height: 240px;
+    opacity: 1;
+    overflow: auto;
+    margin-top: 54px;
+  }
+  &__options-container.active + &__selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+  }
+
+  &__option {
+    padding: 12px 24px;
+    cursor: pointer;
+  }
+  &__option:hover {
+    background-color: #414b57;
+  }
+  &__option-label {
+    cursor: pointer;
+  }
+  &__option input {
+    display: none;
+  }
+
+  /* Searchbox*/
+
+  &__input {
+    width: 100%;
+    padding: 7px 16px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    position: absolute;
+    border-radius: 8px 8px 0 0;
+    z-index: 100;
+    border: 8px solid #2f3640;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s;
+  }
+  &__input:focus {
+    outline: none;
+  }
+
+  &__options-container.active ~ &__search-box input {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

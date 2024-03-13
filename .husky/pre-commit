@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+npm run format:html &
+npm run format:css &
+
+npm run stylelint:fix &&
+npm run stylelint ||
+{ echo "Stylelint failed, commit canceled."; exit 1; }
+
+npm run eslint:fix &&
+npm run eslint ||
+{ echo "ESLint failed, commit canceled."; exit 1; }
+
+exit 1;

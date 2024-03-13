@@ -1,0 +1,218 @@
+$grey: rgb(237, 236, 236);
+$orange: #ff655b;
+
+.history-block {
+  display: none;
+  width: 30em;
+  height: 100%;
+  background-color: #fff;
+  flex-direction: column;
+  padding: 2em 2em;
+  gap: 1em;
+}
+
+.history-block {
+  &__resource-input {
+    display: flex;
+    width: 100%;
+    height: 5em;
+    margin-bottom: 3em;
+  }
+
+  &__near-buttons-block {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__pair {
+    display: flex;
+    flex-direction: row;
+  }
+  &__curr-button {
+    width: 50%;
+    display: flex;
+    height: 3em;
+    background-color: white;
+    color: $orange;
+    border-radius: 50px 0 0 50px;
+    border: 2px solid $orange;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &__curr-button.active {
+    background: linear-gradient(to right, #fd297b, #ff655b);
+    color: white;
+  }
+
+  &__all-button.active {
+    background: linear-gradient(to right, #ff655b, #fd297b);
+    color: white;
+  }
+
+  &__all-button {
+    width: 50%;
+    display: flex;
+    height: 3em;
+    background-color: white;
+    color: $orange;
+    border-radius: 0 50px 50px 0;
+    border: 2px solid $orange;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  &__file-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20em;
+    height: 100%;
+    overflow: auto;
+    transition: all 0.4s;
+    background-color: $grey;
+    border-radius: 20px;
+    gap: 1em;
+  }
+
+  &__file {
+    display: flex;
+    width: 10em;
+    height: 10em;
+    position: relative;
+  }
+
+  &__file-picture {
+    display: flex;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    width: 10em;
+    height: 10em;
+    cursor: pointer;
+  }
+
+  &__delete-button {
+    display: block;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background-color: #ff655b;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    right: -10%;
+
+    transition: background-color 0.3s;
+  }
+
+  &__delete-button:hover {
+    display: flex;
+    width: 2em;
+    height: 2em;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: none;
+  }
+
+  &__delete-button::before {
+    content: "✕";
+  }
+
+  &__source-button {
+    display: flex;
+    min-height: 3em;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: #ff655b;
+    font-weight: 500;
+
+    transition: background-color 0.3s;
+  }
+
+  &__download-button {
+    display: flex;
+    width: 100%;
+    min-height: 3em;
+    background-color: #ff655b;
+    color: white;
+    height: 3em;
+    font-weight: 500;
+    border-radius: 50px;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+
+    transition: background-color 0.3s;
+  }
+
+  &__download-button:hover,
+  &__source-button:hover {
+    background-color: #fd297b;
+  }
+
+  &__download-extend {
+    background-color: rgb(182, 180, 180);
+    color: white;
+    border: none;
+    width: 2em;
+  }
+
+  &.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 1024px) {
+  .history-block {
+    width: 100%;
+  }
+
+  .history-block {
+    &__file-container {
+      flex-direction: row;
+    }
+
+    &__file-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 100%;
+      height: 40em;
+      overflow: auto;
+      transition: all 0.4s;
+      background-color: $grey;
+      border-radius: 20px;
+      gap: 4em;
+      justify-content: center;
+    }
+
+    &__file-picture {
+      width: 100%;
+      height: 100%;
+    }
+
+    .history-block__file {
+      width: 20em;
+      height: 20em;
+    }
+
+    &__delete-button {
+      font-size: 30px;
+    }
+  }
+}

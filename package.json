@@ -1,0 +1,43 @@
+{
+  "type": "module",
+  "name": "catload",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "source": "./src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint .",
+    "eslint:fix": "eslint . --fix",
+    "stylelint": "stylelint ./**/*.{scss,css}",
+    "stylelint:fix": "stylelint  ./**/*.scss --fix",
+    "format:css": "prettier ./**/*.css --write",
+    "format:html": "prettier ./**/*.html --write",
+    "prepare": "husky install",
+    "dev": "parcel src/index.html src/styles/index.scss",
+    "build": "parcel build ./src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@namics/stylelint-bem": "^8.1.0",
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "husky": "^8.0.0",
+    "parcel": "^2.9.3",
+    "prettier": "3.0.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-scss": "^5.0.1"
+  },
+  "dependencies": {
+    "@parcel/transformer-sass": "^2.9.3",
+    "package.json": "^2.0.1",
+    "parcel": "latest",
+    "postcss-lit": "^1.1.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-selector-bem-pattern": "^3.0.0"
+  }
+}

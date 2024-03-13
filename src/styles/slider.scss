@@ -1,0 +1,40 @@
+.super-slider {
+  display: flex;
+  width: 35em;
+  height: 35em;
+  overflow: hidden;
+  align-items: center;
+  pointer-events: all;
+  touch-action: pan-y;
+  position: relative;
+  border: 15px solid #fff;
+  border-bottom-width: 35px;
+  padding-bottom: 35px;
+  border-radius: 5px;
+}
+
+.super-slider {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    width: 35em;
+    height: 35em;
+    position: relative;
+    left: 0;
+    transition: all ease 1s;
+  }
+  &__slide {
+    display: flex;
+    // width: 100%;
+    width: 35em;
+    height: 35em;
+    // height: 35em;
+  }
+  &__img {
+    display: flex;
+    width: 35em;
+    height: 35em;
+    // width: 100%;
+    object-fit: cover;
+  }
+}

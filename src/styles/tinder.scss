@@ -1,0 +1,211 @@
+$font-stack: "Helvetica", sans-serif;
+$grey: rgb(210, 208, 208);
+$white: #fff;
+$green: rgb(94, 172, 36);
+$orange: #ff655b;
+
+.tinder-block {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ff655b, #fd297b);
+  flex-direction: column;
+  align-items: center;
+}
+
+.tinder-block {
+  &__switch-buttons-container {
+    display: flex;
+    width: 100%;
+    padding: 1em;
+    justify-content: space-between;
+    align-items: center;
+    height: 5em;
+    margin-top: 3em;
+    margin-bottom: 2em;
+  }
+
+  &__near-buttons-block {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+  }
+
+  &__top-panel-button {
+    display: flex;
+    width: 7em;
+    height: 3em;
+    border-radius: 30px;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: bold;
+    font-size: 25px;
+    transition: background-color 0.3s;
+  }
+
+  @media (hover: hover) {
+    &__prev-button:hover,
+    &__next-button:hover,
+    &__last-button:hover {
+      background-color: rgb(255, 255, 255, 0.1);
+    }
+  }
+
+  @media (hover: none) {
+    &__prev-button:active,
+    &__next-button:active,
+    &__last-button:active {
+      background-color: rgb(255, 255, 255, 0.1);
+    }
+  }
+
+  &__photo-container {
+    display: flex;
+    max-width: 90%;
+    height: 35em;
+    justify-content: center;
+    margin-top: 2em;
+  }
+
+  &__emotion-buttons-container {
+    display: flex;
+    gap: 9em;
+    height: 10em;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2em;
+    align-items: center;
+  }
+
+  &__emodji-block {
+    display: flex;
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    background-size: 70%;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    background-size: 70%;
+    overflow: hidden;
+  }
+  &__emodji {
+    display: flex;
+    width: 80%;
+  }
+
+  &__counter {
+    display: flex;
+    width: 3em;
+    height: 3em;
+    color: white;
+    font-size: 18px;
+    justify-content: center;
+  }
+
+  &__like-button {
+    display: flex;
+    width: 7em;
+    height: 7em;
+    border-radius: 10px;
+    background-color: #fff;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    font-size: bold;
+    border-radius: 50%;
+
+    path {
+      // color: green;
+      transition: fill 0.3s;
+    }
+
+    @media (hover: hover) {
+      &:hover path {
+        fill: green;
+      }
+    }
+
+    @media (hover: none) {
+      &:active path {
+        fill: green;
+      }
+    }
+  }
+
+  &__dislike-button {
+    display: flex;
+    width: 7em;
+    height: 7em;
+    border-radius: 10px;
+    background-color: #fff;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    font-size: bold;
+    border-radius: 50%;
+
+    path {
+      transition: fill 0.3s;
+    }
+    
+    @media (hover: hover) {
+      &:hover path {
+        fill: red;
+      }
+    }
+
+    @media (hover: none) {
+      &:active path {
+        fill: red;
+      }
+    }
+  }
+
+  &__pair {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 6em;
+    margin-left: 12em;
+  }
+
+  &__like-svg {
+    width: 4.5em;
+  }
+  &__dislike-svg {
+    width: 8em;
+  }
+
+  &__emodji-svg {
+    width: 4.5em;
+  }
+
+  &.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tinder-block {
+    display: none;
+  }
+  // .tinder-block {
+  //   &__prev-button:active,
+  //   &__next-button:active,
+  //   &__last-button:active {
+  //     background-color: rgb(255, 255, 255, 0.1);
+  //   }
+
+  //   &__prev-button:hover,
+  //   &__next-button:hover,
+  //   &__last-button:hover {
+  //     background-color: inherit !important;
+  //   }
+  // }
+}
